@@ -4,7 +4,7 @@ public class Client {
     private int id;
     private String name;
     private String email;
-    private String contactNumber;
+    private String cellphoneNumber;
     private String cpf;
 
     public Client() {
@@ -14,7 +14,7 @@ public class Client {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.contactNumber = contactNumber;
+        this.cellphoneNumber = contactNumber;
         this.cpf = cpf;
     }
 
@@ -48,12 +48,12 @@ public class Client {
         this.email = email;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getCellphoneNumber() {
+        return cellphoneNumber;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
     }
 
     public String getCpf() {
