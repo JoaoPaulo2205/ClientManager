@@ -11,7 +11,7 @@ public class Main {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome to the CLient Manager");
+        System.out.println("Welcome to the Client Manager");
 
         ClientService service = new ClientService();
 
