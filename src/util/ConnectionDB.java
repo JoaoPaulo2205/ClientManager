@@ -10,13 +10,13 @@ public class ConnectionDB {
     private static final Properties props = carregarProps();
 
     private static Properties carregarProps() {
-        Properties p = new Properties();
+        Properties propriedades = new Properties();
         try {
-            p.load(new FileInputStream("config.properties"));
+            propriedades.load(new FileInputStream("config.properties"));
         } catch (Exception e) {
             throw new RuntimeException("Erro ao carregar config.properties: " + e.getMessage());
         }
-        return p;
+        return propriedades;
     }
 
     public static Connection getConnection() throws SQLException {

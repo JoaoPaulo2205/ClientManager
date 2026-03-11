@@ -10,18 +10,16 @@ public class Client {
     public Client() {
     }
 
-    public Client(int id, String name, String email, String contactNumber, String cpf) {
-        this.id = id;
+    public Client(String name, String email, String contactNumber, String cpf) {
         this.name = name;
         this.email = email;
         this.cellphoneNumber = contactNumber;
         this.cpf = cpf;
     }
 
-    public Client(String cpf, String name, int id) {
+    public Client(String cpf, String name) {
         this.cpf = cpf;
         this.name = name;
-        this.id = id;
     }
 
     public int getId() {
@@ -66,6 +64,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Cliente{id=" + id + ", nome=" + name + ", cpf=" + cpf + "}";
+        return "ID: " + id + " | Nome: " + name + " |  CPF: " + cpf + " | Cellphone Number: " + cellphoneNumber + " | Email: " + email;
     }
 }
