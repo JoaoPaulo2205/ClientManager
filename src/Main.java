@@ -1,6 +1,7 @@
 import model.Client;
 import service.ClientService;
 
+import java.rmi.server.ExportException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
@@ -27,13 +28,12 @@ public class Main {
             int option = scan.nextInt();
             scan.nextLine();
 
-            checkOptions(option);
+            checkOptions(option, service);
 
         } while (isContinue);
     }
 
-    public static void checkOptions(int option) {
-        ClientService service = new ClientService();
+    public static void checkOptions(int option, ClientService service) throws SQLException {
         switch (option) {
             case 1:
                 System.out.flush();
@@ -63,9 +63,8 @@ public class Main {
                     List<Client> client = service.listClients();
                     client.forEach(System.out::println);
 
-                }catch (SQLException e){
-                    System.out.println(e.getMessage());
-                    e.printStackTrace();
+                }catch (Exception e){
+                    System.out.println("Error: " + e.getMessage());
                 }
                 System.out.println("---------------------------------------------------------------");
                 isContinue = true;
@@ -110,7 +109,7 @@ public class Main {
                             try{
                                 service.updateClient(client);
                             }catch (Exception e){
-                                e.getMessage();
+                                System.out.println("Error: " + e.getMessage());
                             }
                             break;
                         case 2:
@@ -120,7 +119,7 @@ public class Main {
                             try{
                                 service.updateClient(client);
                             }catch (Exception e){
-                                e.getMessage();
+                                System.out.println("Error: " + e.getMessage());
                             }
                             break;
                         case 3:
@@ -130,7 +129,7 @@ public class Main {
                             try{
                                 service.updateClient(client);
                             }catch (Exception e){
-                                e.getMessage();
+                                System.out.println("Error: " + e.getMessage());
                             }
                             break;
                         case 4:
@@ -140,7 +139,7 @@ public class Main {
                             try{
                                 service.updateClient(client);
                             }catch (Exception e){
-                                e.getMessage();
+                                System.out.println("Error: " + e.getMessage());
                             }
                             break;
                         case 5:
@@ -164,7 +163,7 @@ public class Main {
                             try{
                                 service.updateClient(client);
                             }catch (Exception e){
-                                e.getMessage();
+                                System.out.println("Error: " + e.getMessage());
                             }
                             break;
                         default:
@@ -183,7 +182,7 @@ public class Main {
 
                     service.deleteClient(id);
                 }catch (Exception e){
-                    e.getMessage();
+                    System.out.println("Error: " + e.getMessage());
                 }
                 break;
 
