@@ -20,10 +20,8 @@ public class ClientService {
             System.err.println("Error client CPF have an invalid length! (11)");
             return;
         }
-        if (client != null){
-            repository.save(client);
-            System.out.println("Successfully Saved!");
-        }
+        repository.save(client);
+        System.out.println("Successfully Saved!");
     }
 
     public List<Client> listClients() throws SQLException {
@@ -55,6 +53,9 @@ public class ClientService {
     public void deleteClient(int id) throws SQLException {
         if(repository.searchClientsById(id) != null){
             repository.deleteClient(id);
+            System.out.println("Client deleted Successfully!");
+        }else {
+            System.out.println("Client with id " + id + " not found!");
         }
     }
 
@@ -68,10 +69,8 @@ public class ClientService {
         }else if(client.getCpf().length() != 11){
             System.err.println("Error: Client CPF have an invalid length! (11)");
             return false;
-        }else if(!client.getEmail().contains("@gmail.com") &&
-                 !client.getEmail().contains("@yahoo.com") &&
-                 !client.getEmail().contains("@hotmail.com")){
-            System.err.println("Error: Client email address is not valid!");
+        }else if(!client.getEmail().contains("@")) {
+            System.err.println("Error: Invalid email!");
             return false;
         }else if(client.getCellphoneNumber().length() > 15){
             System.err.println("Error: Client cellphone number is longer than 15 characters!");
