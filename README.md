@@ -6,7 +6,7 @@
 
 # ClientManager
 
-Aplicação de linha de comando para gerenciamento de clientes, desenvolvida em Java puro com conexão direta ao banco de dados PostgreSQL via JDBC.
+Aplicação para gerenciamento de clientes, desenvolvida em Java puro com conexão direta ao banco de dados PostgreSQL via JDBC.
 
 ---
 
@@ -120,7 +120,7 @@ João Paulo — [github.com/JoaoPaulo2205](https://github.com/JoaoPaulo2205)
 
 # ClientManager
 
-A command-line application for managing clients, built with pure Java and direct PostgreSQL database connectivity via JDBC.
+An application for managing clients, built with pure Java and direct PostgreSQL database connectivity via JDBC.
 
 ---
 
